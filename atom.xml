@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>徐影魔的博客</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-09-28T17:05:06.537Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>徐影魔</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Hexo碰到的一些问题</title>
+    <link href="http://yoursite.com/2018/09/28/%E4%BD%BF%E7%94%A8Hexo%E7%A2%B0%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2018/09/28/使用Hexo碰到的一些问题/</id>
+    <published>2018-09-28T06:03:45.000Z</published>
+    <updated>2018-09-28T17:05:06.537Z</updated>
+    
+    <content type="html"><![CDATA[<p>前几天在阿里云上买了个域名，想把自己的博客整好点，<em>xx.github.io</em> 这样的网址有点low了。五十几块钱可以用三年，还送了一张爱奇艺一个月的会员卡，确实不贵。</p><p><img src="https://github.com/XuNeverMore/hexo/blob/master/img/hexo_dir.png" alt="hexo 目录"></p><p>以下是几点理解，有助于部署自己域名博客。</p><ul><li><p><strong>xx.github.io</strong>项目里要有个CNAME文件，填买的域名</p></li><li><p>把这个CNAME文件放到hexo的public文件夹里，这样执行<strong>hexo d</strong>命令部署的时候github项目里就有CNAME文件了</p></li><li><p><strong>hexo d</strong>的作用就是把deploy目录清空，然后把public文件拷贝到deploy目录，最后将deploy目录里的文件夹用git上传到<strong>xx.github.io</strong>项目里，会<strong>覆盖</strong>之前的文件</p></li><li><p><strong>themes</strong>文件夹里是主题项目，如果设置的主题项目文件不完整，<strong>hexo g</strong>生成index文件会失败</p></li><li><p>如过想在不止一个电脑上用hexo写博客，最好把hexo项目上传github上，每次写完也把hexo项目提交做个备份，这样在其他电脑上只要拉一下hexo项目，之前的文件就不会丢失</p><p>  这个图片目前我是上传到hexo项目里，然后在引用的，不知道有没有更简单的方法。</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;前几天在阿里云上买了个域名，想把自己的博客整好点，&lt;em&gt;xx.github.io&lt;/em&gt; 这样的网址有点low了。五十几块钱可以用三年，还送了一张爱奇艺一个月的会员卡，确实不贵。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/XuNeverMo
+      
+    
+    </summary>
+    
+    
+      <category term="记录" scheme="http://yoursite.com/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开篇</title>
+    <link href="http://yoursite.com/2018/09/26/%E5%BC%80%E7%AF%87/"/>
+    <id>http://yoursite.com/2018/09/26/开篇/</id>
+    <published>2018-09-26T02:55:25.000Z</published>
+    <updated>2018-09-28T15:40:49.234Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="说点什么"><a href="#说点什么" class="headerlink" title="说点什么"></a>说点什么</h2><p>  之前弄过一次博客，昨天买了个域名弄了半天，现在时常不能访问，不太清楚什么状况。换了个主题，提交了一下，居然把之前的一片给覆盖了。查了下原因可能是git push –force这个命令的问题，上次看新闻还说有人瞎几把提交代码，引发了一场枪战，美国的事儿，不知道真假。就这儿了，下次再写。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;说点什么&quot;&gt;&lt;a href=&quot;#说点什么&quot; class=&quot;headerlink&quot; title=&quot;说点什么&quot;&gt;&lt;/a&gt;说点什么&lt;/h2&gt;&lt;p&gt;  之前弄过一次博客，昨天买了个域名弄了半天，现在时常不能访问，不太清楚什么状况。换了个主题，提交了一下，居然把之前的一片给
+      
+    
+    </summary>
+    
+    
+      <category term="diary" scheme="http://yoursite.com/tags/diary/"/>
+    
+  </entry>
+  
+</feed>
