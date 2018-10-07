@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -84,7 +84,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="徐影魔的博客" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="为往圣而继绝学" type="application/atom+xml" />
 
 
 
@@ -101,7 +101,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="开篇">
 <meta property="og:url" content="http://yoursite.com/2018/09/26/开篇/index.html">
-<meta property="og:site_name" content="徐影魔的博客">
+<meta property="og:site_name" content="为往圣而继绝学">
 <meta property="og:description" content="说点什么  之前弄过一次博客，昨天买了个域名弄了半天，现在时常不能访问，不太清楚什么状况。换了个主题，提交了一下，居然把之前的一片给覆盖了。查了下原因可能是git push –force这个命令的问题，上次看新闻还说有人瞎几把提交代码，引发了一场枪战，美国的事儿，不知道真假。就这儿了，下次再写。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-09-28T18:08:08.609Z">
@@ -115,7 +115,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Gemini',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -142,7 +142,7 @@
 
 
 
-  <title>开篇 | 徐影魔的博客</title>
+  <title>开篇 | 为往圣而继绝学</title>
   
 
 
@@ -178,7 +178,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">徐影魔的博客</span>
+        <span class="site-title">为往圣而继绝学</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -252,21 +252,49 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap.xml" rel="section">
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
             
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            站点地图
+            搜索
           </a>
         </li>
-      
-
       
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
   
 </nav>
 
@@ -300,11 +328,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="徐影魔">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/nevermore.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="徐影魔的博客">
+      <meta itemprop="name" content="为往圣而继绝学">
     </span>
 
     
@@ -468,7 +496,7 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="/images/nevermore.jpg"
                alt="徐影魔" />
           <p class="site-author-name" itemprop="name">徐影魔</p>
            
@@ -520,6 +548,19 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/XuNeverMore" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
           
         </div>
 
@@ -582,7 +623,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Gemini
   </a>
 </div>
 
@@ -662,6 +703,13 @@
   
   
 
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
@@ -705,6 +753,19 @@
   
 
 
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
 
 
 
