@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-28T18:14:49.292Z</updated>
+  <updated>2018-10-07T04:50:54.374Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>国庆结束了</title>
+    <link href="http://yoursite.com/2018/10/07/%E5%9B%BD%E5%BA%86%E7%BB%93%E6%9D%9F%E4%BA%86/"/>
+    <id>http://yoursite.com/2018/10/07/国庆结束了/</id>
+    <published>2018-10-07T04:10:09.000Z</published>
+    <updated>2018-10-07T04:50:54.374Z</updated>
+    
+    <content type="html"><![CDATA[<p>昨天起了个早床，6点钟起来的，可能是今年起床最早的一天。为了赶火车，不得已如此。不过还算顺利，到汉口火车站后又坐了个快一个小时地铁，刚好赶上武汉站到北京的高铁，这趟地铁的时间有点紧。</p><p>在家当了几天的少爷，呵呵。十月一号的票，晚上的卧铺，第二天中午才到家。这几天都吃的好，一般都四五个菜，有鱼有肉。妈妈可能担心我在外面吃的不好，其实并不如此，随便点个外卖一般都有点肉，不过家里的吃着很实在。吃了就玩手机，玩累了就睡觉，一直在家待着，十一假期就这么过去了。</p><p>姐姐3号回来的，第二天买了电视，订了餐馆以备结婚时请客人吃饭，忙完就走了。听说姐姐的男朋友很好，省吃俭用，一般都自己做饭，从朋友圈自家的饭菜还可以看出手艺不错。人很勤快，连床底下都趴下去打扫。妈妈嘱咐姐姐不能太懒，结婚了可能他就不会这样了，互相照应点。我不知道姐姐的这个男朋友是否表里如一，希望如此。</p><p>十一长假就这么过去，人们又恢复了往日的生活。明天又要开始上班了，爸爸做他的保安，妈妈守着小旅店，姐姐放完假也要上班了。下次相聚可能是过年的时候了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;昨天起了个早床，6点钟起来的，可能是今年起床最早的一天。为了赶火车，不得已如此。不过还算顺利，到汉口火车站后又坐了个快一个小时地铁，刚好赶上武汉站到北京的高铁，这趟地铁的时间有点紧。&lt;/p&gt;
+&lt;p&gt;在家当了几天的少爷，呵呵。十月一号的票，晚上的卧铺，第二天中午才到家。这几天
+      
+    
+    </summary>
+    
+      <category term="生活" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Hexo使用碰到的一些问题</title>
     <link href="http://yoursite.com/2018/09/28/Hexo%E4%BD%BF%E7%94%A8%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2018/09/28/Hexo使用碰到的问题/</id>
     <published>2018-09-28T06:03:45.000Z</published>
-    <updated>2018-09-28T18:14:49.292Z</updated>
+    <updated>2018-09-28T18:15:10.412Z</updated>
     
     <content type="html"><![CDATA[<p>前几天在阿里云上买了个域名，想把自己的博客整好点，<em>xx.github.io</em> 这样的网址有点low了。五十几块钱可以用三年，还送了一张爱奇艺一个月的会员卡，确实不贵。</p><p><img src="/2018/09/28/Hexo使用碰到的问题/hexo_dir.png" alt="hexo 目录"></p><p>以下是几点理解，有助于部署自己域名博客。</p><ul><li><p><strong>xx.github.io</strong>项目里要有个CNAME文件，填买的域名</p></li><li><p>把这个CNAME文件放到hexo的public文件夹里，这样执行<strong>hexo d</strong>命令部署的时候github项目里就有CNAME文件了</p></li><li><p><strong>hexo d</strong>的作用就是把deploy目录清空，然后把public文件拷贝到deploy目录，最后将deploy目录里的文件夹用git上传到<strong>xx.github.io</strong>项目里，会<strong>覆盖</strong>之前的文件</p></li><li><p><strong>themes</strong>文件夹里是主题项目，如果设置的主题项目文件不完整，<strong>hexo g</strong>生成index文件会失败</p></li><li><p>如过想在不止一个电脑上用hexo写博客，最好把hexo项目上传github上，每次写完也把hexo项目提交做个备份，这样在其他电脑上只要拉一下hexo项目，之前的文件就不会丢失</p></li></ul><p><strong>参考链接：</strong><br><br><a href="https://www.jianshu.com/p/0cadd1bd7122" target="_blank" rel="noopener">搭建Hexo博客步骤</a><br><br><a href="http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html?_blank" target="_blank" rel="noopener">博客设置域名</a><br><br><a href="https://blog.csdn.net/qq_26891045/article/details/51693571" target="_blank" rel="noopener">插入图片音乐视频</a></p>]]></content>
     
