@@ -139,4 +139,30 @@
         <tag>Shell</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Bugs &amp; Problems</title>
+    <url>/2024/01/21/Bugs-Problems/</url>
+    <content><![CDATA[<h1 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h1><h2 id="ssh-connect-to-host-github-com-port-22-Connection-timed-out"><a href="#ssh-connect-to-host-github-com-port-22-Connection-timed-out" class="headerlink" title="ssh: connect to host github.com port 22: Connection timed out"></a>ssh: connect to host github.com port 22: Connection timed out</h2><h3 id="测试-ssh-连接"><a href="#测试-ssh-连接" class="headerlink" title="测试 ssh 连接"></a>测试 ssh 连接</h3><pre class="line-numbers language-bash" data-language="bash"><div class="caption"><span>cmd</span></div><code class="language-bash"><span class="token function">ssh</span> <span class="token parameter variable">-T</span> <span class="token parameter variable">-p</span> <span class="token number">443</span> git@ssh.github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="将以下下内容加入-ssh-coinfig文件中"><a href="#将以下下内容加入-ssh-coinfig文件中" class="headerlink" title="将以下下内容加入~/.ssh/coinfig文件中"></a>将以下下内容加入<code>~/.ssh/coinfig</code>文件中</h3><pre class="line-numbers language-bash" data-language="bash"><div class="caption"><span>content</span></div><code class="language-bash">Host github.com
+Hostname ssh.github.com
+Port <span class="token number">443</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><a href="https://www.jianshu.com/p/c3aac5024877">参考链接</a></p>
+<span id="more"></span>
+
+<h2 id="Github-拉取代码失败"><a href="#Github-拉取代码失败" class="headerlink" title="Github 拉取代码失败"></a>Github 拉取代码失败</h2><h3 id="如果有VPN，可以设置代理"><a href="#如果有VPN，可以设置代理" class="headerlink" title="如果有VPN，可以设置代理"></a>如果有VPN，可以设置代理</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> http.proxy <span class="token number">127.0</span>.0.1:7890<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>Record</category>
+        <category>Bugs &amp; Problems</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>Github</tag>
+        <tag>Android</tag>
+        <tag>Kotlin</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
 </search>
