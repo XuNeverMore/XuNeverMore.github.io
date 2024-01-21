@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo使用碰到的一些问题</title>
+    <url>/2018/09/28/Hexo%E4%BD%BF%E7%94%A8%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>前几天在阿里云上买了个域名，想把自己的博客整好点，<em>xx.github.io</em> 这样的网址有点low了。五十几块钱可以用三年，还送了一张爱奇艺一个月的会员卡，确实不贵。</p>
+<p><img src="/images/hexo_dir.png" alt="hexo 目录"></p>
+<p>以下是几点理解，有助于部署自己域名博客。</p>
+<ul>
+<li><p><strong>xx.github.io</strong>项目里要有个CNAME文件，填买的域名</p>
+</li>
+<li><p>把这个CNAME文件放到hexo的public文件夹里，这样执行<strong>hexo d</strong>命令部署的时候github项目里就有CNAME文件了</p>
+</li>
+<li><p><strong>hexo d</strong>的作用就是把deploy目录清空，然后把public文件拷贝到deploy目录，最后将deploy目录里的文件夹用git上传到<strong>xx.github.io</strong>项目里，会<strong>覆盖</strong>之前的文件</p>
+</li>
+<li><p><strong>themes</strong>文件夹里是主题项目，如果设置的主题项目文件不完整，<strong>hexo g</strong>生成index文件会失败</p>
+</li>
+<li><p>如过想在不止一个电脑上用hexo写博客，最好把hexo项目上传github上，每次写完也把hexo项目提交做个备份，这样在其他电脑上只要拉一下hexo项目，之前的文件就不会丢失</p>
+</li>
+</ul>
+<p><strong>参考链接：</strong><br><br><a href="https://www.jianshu.com/p/0cadd1bd7122">搭建Hexo博客步骤</a><br><br><a href="http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html?_blank">博客设置域名</a><br><br><a href="https://blog.csdn.net/qq_26891045/article/details/51693571">插入图片音乐视频</a></p>
+]]></content>
+      <categories>
+        <category>Record</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>人间行走</title>
+    <url>/2018/12/25/%E4%BA%BA%E9%97%B4%E8%A1%8C%E8%B5%B0/</url>
+    <content><![CDATA[<p>我从农村走到城市，<br><br>不见了清澈的水里的天，<br><br>不见了窄窄的田埂，<br><br>不见了无际的稻田，<br><br>却吃到了城里的牛肉面。<br></p>
+<p>我从农村走到城市，<br><br>看见了朦胧的霓虹灯，<br><br>看见了伸入雾霾的楼，<br><br>却看不见了因贪吃稻谷，<br><br>被我抽了一鞭子，<br><br>使劲扭着屁股的牛。</p>
+]]></content>
+      <categories>
+        <category>Creation</category>
+      </categories>
+      <tags>
+        <tag>Feeling</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>国庆结束了</title>
+    <url>/2018/10/07/%E5%9B%BD%E5%BA%86%E7%BB%93%E6%9D%9F%E4%BA%86/</url>
+    <content><![CDATA[<p>昨天起了个早床，6点钟起来的，可能是今年起床最早的一天。为了赶火车，不得已如此。不过还算顺利，到汉口火车站后又坐了个快一个小时地铁，刚好赶上武汉站到北京的高铁，这趟地铁的时间有点紧。</p>
+<p>在家当了几天的少爷，呵呵。十月一号的票，晚上的卧铺，第二天中午才到家。这几天都吃的好，一般都四五个菜，有鱼有肉。妈妈可能担心我在外面吃的不好，其实并不如此，随便点个外卖一般都有点肉，不过家里的吃着很实在。吃了就玩手机，玩累了就睡觉，一直在家待着，十一假期就这么过去了。</p>
+<p>姐姐3号回来的，第二天买了电视，订了餐馆以备结婚时请客人吃饭，忙完就走了。听说姐姐的男朋友很好，省吃俭用，一般都自己做饭，从朋友圈自家的饭菜还可以看出手艺不错。人很勤快，连床底下都趴下去打扫。妈妈嘱咐姐姐不能太懒，结婚了可能他就不会这样了，互相照应点。我不知道姐姐的这个男朋友是否表里如一，希望如此。</p>
+<p>十一长假就这么过去，人们又恢复了往日的生活。明天又要开始上班了，爸爸做他的保安，妈妈守着小旅店，姐姐放完假也要上班了。下次相聚可能是过年的时候了。</p>
+]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>地铁异事</title>
+    <url>/2019/07/16/%E5%9C%B0%E9%93%81%E5%BC%82%E4%BA%8B/</url>
+    <content><![CDATA[<p>星期五与以往不同，很多人下班都比较晚，10点多了地铁上还很拥挤。上上下下中，我见机钻空坐下。</p>
+<p>我不经意间抬起头，注意到右前方的一个人。他背着一个鼓鼓的包，右手扶着钢管，左臂弯曲藏在胸前，可他的项上却不见头。很显然，他在低头玩手机。但是当我向对面看去，窗户中反射到他的镜里，左手确实拿着手机，可我仍没有看到他的脑袋。</p>
+<span id="more"></span>
+<p>“欢迎乘坐十号线列车，列车运行前方是xx站，下车的乘客请提前做好准备…”当播音响起时，他开始往车门移动，以方便下车。我还是没有看到他的头，但是我注意到原先被他挡住的地方坐着一个大妈，此刻她脸色煞白。</p>
+<p>地铁开始减速，不一会门开了，他用手机照着前方下了车。我看了看手机，离末班地铁时间还早。好奇心驱使我跟着他下了车。我见他在铁板凳上坐下，此刻他正面向着我，我能很清楚地看到他的上半身。他没有头！他的脖子上没有头！脖子上有一个光滑的切面，在地铁的灯光照射下，透露着金属的光泽。我猜测他不是人，而是机器人。我若无其事地在他旁边坐下，打开手机装作等人的样子，用眼角的余光观察这他。他把手机放在旁边，把背包取下，从包里提出一个脑袋，然后把它搁在腿上。我大胆地朝那个脑袋看去，发现它栩栩如生，与真人的脑袋一般无异，只是眼睛没有睁开。然后又见他用手机点了几下，那脑袋上的眼睛就睁开了，最后他将那个脑袋熟练地放到脖子上了。</p>
+<p>他像个正常人似的正准备背上包起身离开，我开口叫住了他，把我想问的问题都抛了出来。他诧异地看了我一看，好像我应该知道似的。然后他解释说，他的头其实是一个电脑，叫做头脑。刚才放在包里充电，他撩起后脑勺的头发，我看见一个插口，还是Type-C的。手机可以控制头脑开机，并且手机的摄像头可以给他提供视野，但是没有头脑上眼睛提供的视野开阔和清晰。他越说越兴奋，那是对科技的狂热。他给我看了下他的手机，外观与我用的坚果pro2差不多，只不过他用来操控头脑的东西似乎不是一个app，是设置里的一个系统功能。</p>
+<p>聊了一会，地铁来了，我的疑团基本都已解开，于是跟他道别回家。上了地铁我突然意识到他手机上的系统时间显示的好像是2109年。</p>
+<p>写于2019&#x2F;3&#x2F;30</p>
+]]></content>
+      <categories>
+        <category>Creation</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>开篇</title>
+    <url>/2018/09/26/%E5%BC%80%E7%AF%87/</url>
+    <content><![CDATA[<h2 id="说点什么"><a href="#说点什么" class="headerlink" title="说点什么"></a>说点什么</h2><p>  之前弄过一次博客，昨天买了个域名弄了半天，现在时常不能访问，不太清楚什么状况。换了个主题，提交了一下，居然把之前的一片给覆盖了。查了下原因可能是git push –force这个命令的问题，上次看新闻还说有人瞎几把提交代码，引发了一场枪战，美国的事儿，不知道真假。就这儿了，下次再写。</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 	src="http://music.163.com/outchain/player?type=2&id=25706282&auto=0&height=66"></iframe>
+
+]]></content>
+      <categories>
+        <category>Record</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>热干面</title>
+    <url>/2018/10/09/%E7%83%AD%E5%B9%B2%E9%9D%A2/</url>
+    <content><![CDATA[<p><img src="/images/reganmian.jpg" alt="热干面"></p>
+<p>在网上看到一个外国人吃热干面的美食视频，勾起了关于热干面的一些回忆。</p>
+<span id="more"></span>
+<p>记得第一次吃热干面是外公带我去吃的。那时刚从上海回来，根本不知道热干面是什么东西。一天早上外公带我上了趟白沙(我们把上白沙镇的集市叫”上白沙”),他叫我在街边早点摊的一个桌边坐下，把一碗面端到我面前给我吃。我吃了一半左右，不觉难吃也不觉好吃，外公把剩下的吃了。因为那时小，知道面的种类也很少，只对拉面略有耳闻，我心想原来拉面就是这个味道。</p>
+<p>后来在白沙镇中心小学上学了，中午经常和小伙伴一同吃午饭。白沙镇虽是我的故乡，但是我小学二年级就去上海了，所以这里的一切都是陌生的。中午吃饭我跟着小伙伴们走，他们进了一个餐馆，他们点了热干面，一份小碗的五毛钱，我也一样。从此之后，”热干面”和”热干面”对上号了。那时中午基本上都吃热干面，好吃，喜欢吃。后来不卖五毛钱的小碗热干面了，只有一块钱的大碗热干面了。</p>
+<p>从小学到高中，吃早饭，热干面都是一个可选项。到了大学，热干面在早餐中的地位有所下降。其一，吃了好多年了，不太想吃了；其二，大学早餐的多样性丰富了许多，会尝试去吃一些没吃过的早点。如此一来，吃热干面的次数愈来愈少，逐渐排除在可选范围之内了。</p>
+<p>毕业之后，辗转离开了家乡，数年没吃过了。十一回去，想有机会的话可以吃吃，但是往返匆忙没有吃上。</p>
+<p>今天，在网上看到这个<a href="https://m.weibo.cn/status/GD09znv2C#&video">老外吃热干面的视频</a>，我将它转发到了QQ空间。评论道：上次吃热干面大概是五百年前了。</p>
+]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+      <tags>
+        <tag>Food</tag>
+        <tag>Feeling</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>责任</title>
+    <url>/2018/10/21/%E8%B4%A3%E4%BB%BB/</url>
+    <content><![CDATA[<p>上午一个人正在电影院看电影《无双》，剧情开始反转的时候来了一个电话。项目出了点问题，现在上不了线。虽然是星期天，但是这个项目第一次打包是经我手的，所以我得负这个责。我在群里请示去公司看下，领导问我离公司远吗，我没有回答远不远只是说下午没事。也许我编个理由说去不了，也可以等明天再做，但是这事如果不立马解决，我想我心里会不安的，而且会有损在领导心中的形象。不管出于何种目的，我还是坐了一个小时的地铁去公司把问题解决了。回来时在地铁上困得不行，工作倒是不累，累的是奔波。</p>
+<span id="more"></span>
+<p>也许是从那件事开始，我生怕因为自己的责任误了事。如果真是那样，会很没面子，自尊受挫是我不愿遇到的。</p>
+<p>那是上初中的时候，有一次考试完(好像是期中考试，课都不上那种)，早上上课的时候班主任发现教室都是垃圾。她开始追查是哪几个负责扫地的人没有打扫卫生，我心中忐忑，因为我是扫地人之一。我们几个人被揪了出来，她说出了惩罚手段，那就是去操场上跑两节课。记得第二节课上完全校都要去操场上做早操，结果我们就像电视剧中囚笼里的罪犯游街一样，当着那么多人的面在跑道上跑着，直到他们做完了第八套广播体操。后来还跑了好一会，期间碰到化学老师要搬桶装纯净水到她家楼上，心里的负罪感迫使我主动帮她搬水，还有另外一个同学也一起做了这件好事。跑步的惩罚结束后班主任问我们没有打扫卫生的原因，我撒谎说我忘记了。其实那天考试完走出教学楼，当我回首的时候我是记得要打扫卫生的，只是心想其他人大概也忘了吧，于是便心存侥幸地走了。班主任那天说，她给我们上的这一课叫责任。</p>
+<p>今天想来，我会为我做的事情负责，其实是归根结底是自尊心的驱使。因为做事没尽职尽责而丧失颜面这种事，我不容许它发生在自己身上。试想一个身无长物的人，如果连那么一点自尊都没有了，那还有什么呢？</p>
+]]></content>
+      <categories>
+        <category>Creation</category>
+      </categories>
+      <tags>
+        <tag>Feeling</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mack使用记录</title>
+    <url>/2024/01/21/Mack%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="终端配置"><a href="#终端配置" class="headerlink" title="终端配置"></a>终端配置</h1><h2 id="终端显示完整路径"><a href="#终端显示完整路径" class="headerlink" title="终端显示完整路径"></a>终端显示完整路径</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 开启自定义颜色</span><br><span class="line">autoload -U colors &amp;&amp; colors</span><br><span class="line"></span><br><span class="line"># 显示Git分支</span><br><span class="line">function parse_git_branch() &#123;</span><br><span class="line">    git branch 2&gt; /dev/null | sed -n -e &#x27;s/^\* \(.*\)/[\1]/p&#x27;</span><br><span class="line">&#125;</span><br><span class="line">setopt PROMPT_SUBST</span><br><span class="line"></span><br><span class="line"># 配置提示符颜色</span><br><span class="line">export PROMPT=&#x27;%F&#123;green&#125;%n@%m:%F&#123;cyan&#125;%~%F&#123;green&#125;$(parse_git_branch)%F&#123;white&#125;&gt; &#x27;</span><br><span class="line">source ~/.bash_profile</span><br><span class="line"># 在目录前加上/bin 和 /usr/bin</span><br><span class="line">export PATH=/bin:/usr/bin:$PATH</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="环境报错误-command-not-found"><a href="#环境报错误-command-not-found" class="headerlink" title="环境报错误 command not found"></a>环境报错误 command not found</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=/bin:/usr/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Android-环境变量配置"><a href="#Android-环境变量配置" class="headerlink" title="Android 环境变量配置"></a>Android 环境变量配置</h1><figure class="highlight bash"><figcaption><span>.bash_profile</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> ANDROID_HOME=/Users/edy/Library/Android/sdk</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;ANDROID_HOME&#125;</span>/tools</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;ANDROID_HOME&#125;</span>/platform-tools%</span><br></pre></td></tr></table></figure>
+
+<h1 id="访达"><a href="#访达" class="headerlink" title="访达"></a>访达</h1><ul>
+<li>显示完整路径<br>defaults write com.apple.finder _FXShowPosixPathInTitle -bool TRUE;killall Finder</li>
+<li>隐藏完整路径<br>defaults delete com.apple.finder _FXShowPosixPathInTitle;killall Finder<br>快捷键</li>
+<li>option+command+c 复制文件路径<br>其他命令</li>
+<li>查看默认 shell echo $SHELL</li>
+<li>用 printenv 查看环境变量</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Shell</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+        <tag>Shell</tag>
+      </tags>
+  </entry>
+</search>
