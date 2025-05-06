@@ -1,3 +1,3 @@
-rm -rf docs
+hexo clean
 hexo g
 hexo s

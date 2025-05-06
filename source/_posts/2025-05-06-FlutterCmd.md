@@ -1,7 +1,8 @@
 ---
-title: Github Page
+title: Flutter 常用命令整理
 date: 2025-05-06
 tag: [Flutter,cmd]
+category: Flutter
 ---
 
 
@@ -9,7 +10,7 @@ Flutter 提供了丰富的命令行工具和包管理功能，以下是常用的
 
 ---
 
-**一、常用 Flutter 命令**
+# 一、常用 Flutter 命令
 1. **项目创建与运行**
 • 创建新项目  
 
@@ -103,7 +104,7 @@ Flutter 提供了丰富的命令行工具和包管理功能，以下是常用的
 
 ---
 
-**二、包管理（`pubspec.yaml`）**
+# 二、包管理（`pubspec.yaml`）
 Flutter 使用 `pub` 工具管理依赖，配置文件为 `pubspec.yaml`。
 
 1. **添加依赖**
@@ -149,7 +150,7 @@ dependencies:
 
 ---
 
-**三、常用第三方包推荐**
+# 三、常用第三方包推荐
 1. 网络请求  
    • `http`：轻量级 HTTP 客户端。
 
@@ -190,7 +191,7 @@ dependencies:
 
 ---
 
-**四、其他实用命令**
+# 四、其他实用命令
 • 生成图标和启动页  
 
   ```bash
