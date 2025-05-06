@@ -93,11 +93,11 @@ open_graph:
 # Value before `||` delimiter is the target link, value after `||` delimiter is the name of Font Awesome icon.
 # External url should start with http:// or https://
 menu:
-  home: / || fa fa-home
-  archives: /archives/ || fa fa-archive
-  tags: /tags || fa fa-tags
-  categories: /categories || fa fa-th
-  about: /about/ || fa fa-user
+  home: /blog/ || fa fa-home
+  archives: /blog/archives/ || fa fa-archive
+  tags: /blog/tags || fa fa-tags
+  categories: /blog/categories || fa fa-th
+  about: /blog/about/ || fa fa-user
   #schedule: /schedule/ || fa fa-calendar
   #sitemap: /sitemap.xml || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
@@ -506,7 +506,7 @@ note:
 # Tabs tag
 tabs:
   # Make the nav bar of tabs with long content stick to the top.
-  sticky: false
+  sticky: true
   transition:
     tabs: false
     labels: true
