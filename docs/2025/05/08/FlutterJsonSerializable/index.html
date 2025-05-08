@@ -19,22 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="xunevermore">
-<meta property="og:url" content="http://example.com/index.html">
+    <meta name="description" content="使用 json_serializable 在 Flutter&#x2F;Dart 中进行 JSON 序列化 json_serializable 是 Dart 中一个强大的代码生成库，用于自动生成 JSON 序列化和反序列化的代码。以下是详细的使用指南： 添加依赖首先，在 pubspec.yaml 中添加必要的依赖： 123456dependencies:  json_annotation: ^4.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FlutterJsonSerializable">
+<meta property="og:url" content="http://example.com/2025/05/08/FlutterJsonSerializable/index.html">
 <meta property="og:site_name" content="xunevermore">
+<meta property="og:description" content="使用 json_serializable 在 Flutter&#x2F;Dart 中进行 JSON 序列化 json_serializable 是 Dart 中一个强大的代码生成库，用于自动生成 JSON 序列化和反序列化的代码。以下是详细的使用指南： 添加依赖首先，在 pubspec.yaml 中添加必要的依赖： 123456dependencies:  json_annotation: ^4.">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-05-08T09:27:53.000Z">
+<meta property="article:modified_time" content="2025-05-08T10:39:07.773Z">
 <meta property="article:author" content="xunevermore">
+<meta property="article:tag" content="Flutter">
+<meta property="article:tag" content="Json">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2025/05/08/FlutterJsonSerializable/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2025/05/08/FlutterJsonSerializable/","path":"2025/05/08/FlutterJsonSerializable/","title":"FlutterJsonSerializable"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>xunevermore</title>
+<title>FlutterJsonSerializable | xunevermore</title>
   
 
 
@@ -84,7 +90,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">xunevermore</h1>
+      <p class="site-title">xunevermore</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Hello World!</p>
@@ -111,7 +117,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -124,6 +130,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96"><span class="nav-number">1.</span> <span class="nav-text">添加依赖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%8F%AF%E5%BA%8F%E5%88%97%E5%8C%96%E7%9A%84%E6%A8%A1%E5%9E%8B%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">创建可序列化的模型类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E5%BA%8F%E5%88%97%E5%8C%96%E4%BB%A3%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text">生成序列化代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%94%9F%E6%88%90%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="nav-number">4.</span> <span class="nav-text">使用生成的代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE%E9%80%89%E9%A1%B9"><span class="nav-number">5.</span> <span class="nav-text">高级配置选项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E5%B5%8C%E5%A5%97%E5%AF%B9%E8%B1%A1"><span class="nav-number">6.</span> <span class="nav-text">处理嵌套对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="nav-number">7.</span> <span class="nav-text">常见问题解决</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8E-Flutter-%E7%BB%93%E5%90%88%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-number">8.</span> <span class="nav-text">与 Flutter 结合的最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-API-%E5%93%8D%E5%BA%94%E5%A4%84%E7%90%86%EF%BC%9A"><span class="nav-number">8.1.</span> <span class="nav-text">1. API 响应处理：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%EF%BC%9A"><span class="nav-number">8.2.</span> <span class="nav-text">2. 本地存储：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6"><span class="nav-number">9.</span> <span class="nav-text">插件</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -173,16 +180,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/08/FlutterJsonSerializable/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -196,13 +204,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | xunevermore">
+      <meta itemprop="name" content="FlutterJsonSerializable | xunevermore">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/05/08/FlutterJsonSerializable/" class="post-title-link" itemprop="url">FlutterJsonSerializable</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          FlutterJsonSerializable
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -234,8 +242,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <p>使用 json_serializable 在 Flutter&#x2F;Dart 中进行 JSON 序列化</p>
+    <div class="post-body" itemprop="articleBody"><p>使用 json_serializable 在 Flutter&#x2F;Dart 中进行 JSON 序列化</p>
 <p><code>json_serializable</code> 是 Dart 中一个强大的代码生成库，用于自动生成 JSON 序列化和反序列化的代码。以下是详细的使用指南：</p>
 <h1 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h1><p>首先，在 <code>pubspec.yaml</code> 中添加必要的依赖：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dependencies:</span></span><br><span class="line">  <span class="attr">json_annotation:</span> <span class="string">^4.8.1</span></span><br><span class="line"></span><br><span class="line"><span class="attr">dev_dependencies:</span></span><br><span class="line">  <span class="attr">build_runner:</span> <span class="string">^2.4.6</span></span><br><span class="line">  <span class="attr">json_serializable:</span> <span class="string">^6.7.1</span></span><br></pre></td></tr></table></figure>
@@ -288,7 +295,6 @@
 <h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><p>Android Studio Plugin:<code>DartMappable​(Flutter Json To Freezed JsonSerializable Compat)​</code></p>
 <p>通过插件可以快速生成json_serializable代码</p>
 
-      
     </div>
 
     
@@ -296,551 +302,26 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
+          <div class="post-tags">
+              <a href="/tags/Flutter/" rel="tag"># Flutter</a>
+              <a href="/tags/Json/" rel="tag"># Json</a>
+          </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/06/2025-05-06-FlutterCmd/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/five.jpg">
-      <meta itemprop="name" content="xunevermore">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xunevermore">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | xunevermore">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/05/06/2025-05-06-FlutterCmd/" class="post-title-link" itemprop="url">Flutter 常用命令整理</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2025-05-06 00:00:00 / 修改时间：13:30:17" itemprop="dateCreated datePublished" datetime="2025-05-06T00:00:00+08:00">2025-05-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Flutter/" itemprop="url" rel="index"><span itemprop="name">Flutter</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Flutter 提供了丰富的命令行工具和包管理功能，以下是常用的命令和包管理操作整理：</p>
-<hr>
-<h1 id="一、常用-Flutter-命令"><a href="#一、常用-Flutter-命令" class="headerlink" title="一、常用 Flutter 命令"></a>一、常用 Flutter 命令</h1><ol>
-<li><strong>项目创建与运行</strong><br>• 创建新项目</li>
-</ol>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter create &lt;project_name&gt;</span><br></pre></td></tr></table></figure>
-<p>  • 例如：<code>flutter create my_app</code></p>
-<p>• 运行项目  </p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter run</span><br></pre></td></tr></table></figure>
-<p>  • 附加参数：</p>
-<pre><code>◦ `-d &lt;device_id&gt;`：指定设备（通过 `flutter devices` 查看设备列表）。
-
-◦ `--release`：以发布模式运行。
-
-◦ `--debug`：调试模式（默认）。
-
-◦ `--profile`：性能分析模式。
-</code></pre>
-<ol start="2">
-<li><strong>构建应用</strong><br>• 构建 APK（Android）</li>
-</ol>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter build apk</span><br></pre></td></tr></table></figure>
-<p>  • 分屏优化：<code>flutter build apk --split-per-abi</code></p>
-<p>• 构建 App Bundle（Android）  </p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter build appbundle</span><br></pre></td></tr></table></figure>
-
-<p>• 构建 IPA（iOS）  </p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter build ipa</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><strong>设备与模拟器</strong><br>• 列出连接的设备</li>
-</ol>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter devices</span><br></pre></td></tr></table></figure>
-
-<p>• 启动模拟器  </p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter emulators --launch &lt;emulator_name&gt;</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li><strong>依赖与工具</strong><br>• 检查环境配置</li>
-</ol>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter doctor</span><br></pre></td></tr></table></figure>
-
-<p>• 升级 Flutter SDK  </p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter upgrade</span><br></pre></td></tr></table></figure>
-
-<p>• 清理缓存  </p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter clean</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li><strong>测试与调试</strong><br>• 运行单元测试</li>
-</ol>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-
-<p>• 运行集成测试  </p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter <span class="built_in">test</span> integration_test/</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="二、包管理（pubspec-yaml）"><a href="#二、包管理（pubspec-yaml）" class="headerlink" title="二、包管理（pubspec.yaml）"></a>二、包管理（<code>pubspec.yaml</code>）</h1><p>Flutter 使用 <code>pub</code> 工具管理依赖，配置文件为 <code>pubspec.yaml</code>。</p>
-<ol>
-<li><strong>添加依赖</strong><br>在 <code>pubspec.yaml</code> 的 <code>dependencies</code> 或 <code>dev_dependencies</code> 中添加包：</li>
-</ol>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dependencies:</span></span><br><span class="line">  <span class="attr">http:</span> <span class="string">^1.1.0</span>  <span class="comment"># 版本号遵循语义化版本</span></span><br><span class="line">  <span class="attr">provider:</span> <span class="string">^6.0.0</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li><strong>常用包管理命令</strong><br>• 安装依赖</li>
-</ol>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter pub get</span><br></pre></td></tr></table></figure>
-
-<p>• 升级依赖  </p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter pub upgrade</span><br></pre></td></tr></table></figure>
-
-<p>• 升级到最新兼容版本  </p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter pub upgrade --major-versions</span><br></pre></td></tr></table></figure>
-
-<p>• 查看过期的依赖  </p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter pub outdated</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><strong>依赖版本控制</strong><br>• <code>^1.2.3</code>：允许升级到兼容版本（如 <code>1.x.x</code>，但不包括 <code>2.0.0</code>）。</li>
-</ol>
-<p>• <code>any</code>：使用最新版本（不推荐，可能导致冲突）。</p>
-<p>• 直接指定版本：<code>1.2.3</code>（严格锁定）。</p>
-<hr>
-<h1 id="三、常用第三方包推荐"><a href="#三、常用第三方包推荐" class="headerlink" title="三、常用第三方包推荐"></a>三、常用第三方包推荐</h1><ol>
-<li><p>网络请求<br>• <code>http</code>：轻量级 HTTP 客户端。</p>
-<p>• <code>dio</code>：功能强大的网络库（支持拦截器、文件上传等）。</p>
-</li>
-<li><p>状态管理<br>• <code>provider</code>：官方推荐的轻量级状态管理。</p>
-<p>• <code>riverpod</code>：<code>provider</code> 的增强版。</p>
-<p>• <code>bloc</code>：基于事件驱动的状态管理。</p>
-</li>
-<li><p>路由导航<br>• <code>go_router</code>：声明式路由管理。</p>
-<p>• <code>auto_route</code>：代码生成路由。</p>
-</li>
-<li><p>UI 组件<br>• <code>flutter_svg</code>：渲染 SVG 图片。</p>
-<p>• <code>cached_network_image</code>：缓存网络图片。</p>
-</li>
-<li><p>本地存储<br>• <code>shared_preferences</code>：轻量级键值存储。</p>
-<p>• <code>hive</code>：高性能本地数据库。</p>
-</li>
-<li><p>工具类<br>• <code>intl</code>：国际化支持。</p>
-<p>• <code>equatable</code>：简化对象比较。</p>
-</li>
-</ol>
-<hr>
-<h1 id="四、其他实用命令"><a href="#四、其他实用命令" class="headerlink" title="四、其他实用命令"></a>四、其他实用命令</h1><p>• 生成图标和启动页  </p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter pub run flutter_launcher_icons:main</span><br></pre></td></tr></table></figure>
-
-<p>• 查看包详情  </p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter pub deps</span><br></pre></td></tr></table></figure>
-
-<p>• 发布包到 pub.dev  </p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter pub publish</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>通过熟练掌握这些命令和包管理操作，可以显著提升 Flutter 开发效率。遇到问题时，可通过 <code>flutter --help</code> 查看详细帮助文档。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/04/21/2025-04-21-ReactNative/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/five.jpg">
-      <meta itemprop="name" content="xunevermore">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xunevermore">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | xunevermore">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/04/21/2025-04-21-ReactNative/" class="post-title-link" itemprop="url">ReactNative使用记录</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-04-21 00:00:00" itemprop="dateCreated datePublished" datetime="2025-04-21T00:00:00+08:00">2025-04-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-06 10:58:50" itemprop="dateModified" datetime="2025-05-06T10:58:50+08:00">2025-05-06</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="react-native"><a href="#react-native" class="headerlink" title="react native"></a>react native</h2><p>package.json</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;name&quot;: &quot;HelloWorld&quot;,</span><br><span class="line">    &quot;version&quot;: &quot;0.0.1&quot;,</span><br><span class="line">    &quot;private&quot;: true,</span><br><span class="line">    &quot;scripts&quot;: &#123;</span><br><span class="line">      &quot;android&quot;: &quot;react-native run-android&quot;,</span><br><span class="line">      &quot;ios&quot;: &quot;react-native run-ios&quot;,</span><br><span class="line">      &quot;lint&quot;: &quot;eslint .&quot;,</span><br><span class="line">      &quot;start&quot;: &quot;react-native start&quot;,</span><br><span class="line">      &quot;test&quot;: &quot;jest&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;dependencies&quot;: &#123;</span><br><span class="line">      &quot;react&quot;: &quot;18.3.1&quot;,</span><br><span class="line">      &quot;react-native&quot;: &quot;0.75.5&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;devDependencies&quot;: &#123;</span><br><span class="line">      &quot;@babel/core&quot;: &quot;^7.20.0&quot;,</span><br><span class="line">      &quot;@babel/preset-env&quot;: &quot;^7.20.0&quot;,</span><br><span class="line">      &quot;@babel/runtime&quot;: &quot;^7.20.0&quot;,</span><br><span class="line">      &quot;@react-native/babel-preset&quot;: &quot;0.75.5&quot;,</span><br><span class="line">      &quot;@react-native/eslint-config&quot;: &quot;0.75.5&quot;,</span><br><span class="line">      &quot;@react-native/metro-config&quot;: &quot;0.75.5&quot;,</span><br><span class="line">      &quot;@react-native/typescript-config&quot;: &quot;0.75.5&quot;,</span><br><span class="line">      &quot;@types/react&quot;: &quot;^18.2.6&quot;,</span><br><span class="line">      &quot;@types/react-test-renderer&quot;: &quot;^18.0.0&quot;,</span><br><span class="line">      &quot;babel-jest&quot;: &quot;^29.6.3&quot;,</span><br><span class="line">      &quot;eslint&quot;: &quot;^8.19.0&quot;,</span><br><span class="line">      &quot;jest&quot;: &quot;^29.6.3&quot;,</span><br><span class="line">      &quot;prettier&quot;: &quot;2.8.8&quot;,</span><br><span class="line">      &quot;react-test-renderer&quot;: &quot;18.3.1&quot;,</span><br><span class="line">      &quot;typescript&quot;: &quot;5.0.4&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;engines&quot;: &#123;</span><br><span class="line">      &quot;node&quot;: &quot;&gt;=18&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/15/2025-03-15-PowerShell/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/five.jpg">
-      <meta itemprop="name" content="xunevermore">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xunevermore">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | xunevermore">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/03/15/2025-03-15-PowerShell/" class="post-title-link" itemprop="url">PowerShell</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-03-15 00:00:00" itemprop="dateCreated datePublished" datetime="2025-03-15T00:00:00+08:00">2025-03-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-06 13:29:13" itemprop="dateModified" datetime="2025-05-06T13:29:13+08:00">2025-05-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/PowerShell/" itemprop="url" rel="index"><span itemprop="name">PowerShell</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="PowerShell终端路径显示git分支"><a href="#PowerShell终端路径显示git分支" class="headerlink" title="PowerShell终端路径显示git分支"></a>PowerShell终端路径显示git分支</h1><ol>
-<li>运行<code>echo $PSHOME</code>找到PowerShell根目录，修改<code>Microsoft.PowerShell_profile.ps1</code>文件（没有则新建并修改），添加下面的代码：</li>
-</ol>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">prompt</span></span> &#123;</span><br><span class="line">    <span class="variable">$path</span> = (<span class="built_in">Get-Location</span>).Path</span><br><span class="line">    <span class="variable">$branch</span> = git rev<span class="literal">-parse</span> <span class="literal">--abbrev-ref</span> HEAD <span class="number">2</span>&gt; <span class="variable">$null</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="variable">$branch</span>) &#123;</span><br><span class="line">        <span class="variable">$branch</span> = <span class="string">&quot; (<span class="variable">$branch</span>)&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="string">&quot;<span class="variable">$path</span><span class="variable">$branch</span>&gt; &quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>保存以上文件，重启终端</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/13/2025-03-13-Github-Page/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/five.jpg">
-      <meta itemprop="name" content="xunevermore">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xunevermore">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | xunevermore">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/03/13/2025-03-13-Github-Page/" class="post-title-link" itemprop="url">Github Page</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-03-13 00:00:00" itemprop="dateCreated datePublished" datetime="2025-03-13T00:00:00+08:00">2025-03-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-06 13:29:28" itemprop="dateModified" datetime="2025-05-06T13:29:28+08:00">2025-05-06</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Github-Page是什么"><a href="#Github-Page是什么" class="headerlink" title="Github Page是什么"></a>Github Page是什么</h1><p>Github Page是Github提供的一种静态网页托管服务，可以用来展示你的项目、博客等。Github Page支持HTML、CSS、JavaScript等前端技术，并且可以绑定自定义域名。</p>
-<h2 id="如何使用Github-Page"><a href="#如何使用Github-Page" class="headerlink" title="如何使用Github Page"></a>如何使用Github Page</h2><ol>
-<li>在Github上创建一个新的仓库，仓库名称必须为<code>yourusername.github.io</code>，其中<code>yourusername</code>是你的Github用户名。</li>
-<li>在仓库中创建一个<code>_config.yml</code>文件，内容为<code>theme: minima</code>（主题）。</li>
-<li>在仓库中创建一个<code>index.md</code>文件，这是主页。</li>
-<li>创建<code>_post</code>文件夹，这是用来放md文件的，文件名格式一般为yyyy-mm-dd-文件名.md。文件头如下</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &quot;Hello&quot;</span><br><span class="line">date: 2025-03-12</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>提交后，setting中找到Github Page，选择分支，部署方式为github action,点击保存即可。</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/01/21/2024-01-21-MacShell/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/five.jpg">
-      <meta itemprop="name" content="xunevermore">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xunevermore">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | xunevermore">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/01/21/2024-01-21-MacShell/" class="post-title-link" itemprop="url">Mac使用记录</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-01-21 16:37:15" itemprop="dateCreated datePublished" datetime="2024-01-21T16:37:15+08:00">2024-01-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-06 14:22:02" itemprop="dateModified" datetime="2025-05-06T14:22:02+08:00">2025-05-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Shell/" itemprop="url" rel="index"><span itemprop="name">Shell</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="终端配置"><a href="#终端配置" class="headerlink" title="终端配置"></a>终端配置</h1><h2 id="终端显示完整路径"><a href="#终端显示完整路径" class="headerlink" title="终端显示完整路径"></a>终端显示完整路径</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 开启自定义颜色</span><br><span class="line">autoload -U colors &amp;&amp; colors</span><br><span class="line"></span><br><span class="line"># 显示Git分支</span><br><span class="line">function parse_git_branch() &#123;</span><br><span class="line">    git branch 2&gt; /dev/null | sed -n -e &#x27;s/^\* \(.*\)/[\1]/p&#x27;</span><br><span class="line">&#125;</span><br><span class="line">setopt PROMPT_SUBST</span><br><span class="line"></span><br><span class="line"># 配置提示符颜色</span><br><span class="line">export PROMPT=&#x27;%F&#123;green&#125;%n@%m:%F&#123;cyan&#125;%~%F&#123;green&#125;$(parse_git_branch)%F&#123;white&#125;&gt; &#x27;</span><br><span class="line">source ~/.bash_profile</span><br><span class="line"># 在目录前加上/bin 和 /usr/bin</span><br><span class="line">export PATH=/bin:/usr/bin:$PATH</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/01/21/2024-01-21-MacShell/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/05/06/2025-05-06-FlutterCmd/" rel="prev" title="Flutter 常用命令整理">
+                  <i class="fa fa-angle-left"></i> Flutter 常用命令整理
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
+
 
 
 
