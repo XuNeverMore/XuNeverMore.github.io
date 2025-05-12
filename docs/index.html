@@ -138,7 +138,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -174,6 +174,124 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/12/FlutterLogin/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/five.jpg">
+      <meta itemprop="name" content="xunevermore">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xunevermore">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | xunevermore">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/05/12/FlutterLogin/" class="post-title-link" itemprop="url">FlutterLogin</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-05-12 20:21:30 / 修改时间：20:23:24" itemprop="dateCreated datePublished" datetime="2025-05-12T20:21:30+08:00">2025-05-12</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在 Flutter 项目中实现 Google 和 Apple 登录</p>
+<p>要在 Flutter 应用中集成 Google 和 Apple 登录功能，可以按照以下步骤操作：</p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="添加依赖项"><a href="#添加依赖项" class="headerlink" title="添加依赖项"></a>添加依赖项</h2><p>在 <code>pubspec.yaml</code> 中添加必要的依赖：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dependencies:</span></span><br><span class="line">  <span class="attr">firebase_auth:</span> <span class="string">^4.11.3</span></span><br><span class="line">  <span class="attr">google_sign_in:</span> <span class="string">^6.1.5</span></span><br><span class="line">  <span class="attr">sign_in_with_apple:</span> <span class="string">^5.0.0</span></span><br><span class="line">  <span class="attr">flutter_facebook_auth:</span> <span class="string">^4.6.3</span> <span class="comment"># 可选，如果需要Facebook登录</span></span><br></pre></td></tr></table></figure>
+
+<p>运行 <code>flutter pub get</code> 安装依赖。</p>
+<h1 id="配置-Firebase（用于-Google-登录）"><a href="#配置-Firebase（用于-Google-登录）" class="headerlink" title="配置 Firebase（用于 Google 登录）"></a>配置 Firebase（用于 Google 登录）</h1><h2 id="创建-Firebase-项目"><a href="#创建-Firebase-项目" class="headerlink" title="创建 Firebase 项目"></a>创建 Firebase 项目</h2><ol>
+<li>访问 <a target="_blank" rel="noopener" href="https://console.firebase.google.com/">Firebase 控制台</a></li>
+<li>创建新项目并添加 Android&#x2F;iOS 应用</li>
+<li>下载 <code>google-services.json</code> (Android) 和 <code>GoogleService-Info.plist</code> (iOS)</li>
+<li>将这些文件放在项目对应目录中</li>
+</ol>
+<h2 id="配置-Firebase-Authentication"><a href="#配置-Firebase-Authentication" class="headerlink" title="配置 Firebase Authentication"></a>配置 Firebase Authentication</h2><p>在 Firebase 控制台中启用 Google 和 Apple 登录方法。</p>
+<h1 id="实现-Google-登录"><a href="#实现-Google-登录" class="headerlink" title="实现 Google 登录"></a>实现 Google 登录</h1><h2 id="Android-配置"><a href="#Android-配置" class="headerlink" title="Android 配置"></a>Android 配置</h2><p>在 <code>android/app/build.gradle</code> 中添加：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">    implementation platform(<span class="string">&#x27;com.google.firebase:firebase-bom:32.0.0&#x27;</span>)</span><br><span class="line">    implementation <span class="string">&#x27;com.google.firebase:firebase-auth&#x27;</span></span><br><span class="line">    implementation <span class="string">&#x27;com.google.android.gms:play-services-auth:20.6.0&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="iOS-配置"><a href="#iOS-配置" class="headerlink" title="iOS 配置"></a>iOS 配置</h2><p>在 <code>ios/Runner/Info.plist</code> 中添加：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>CFBundleURLTypes<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dict</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>CFBundleTypeRole<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">string</span>&gt;</span>Editor<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>CFBundleURLSchemes<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>REVERSED_CLIENT_ID<span class="tag">&lt;/<span class="name">string</span>&gt;</span> <span class="comment">&lt;!-- 从GoogleService-Info.plist获取 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dict</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="实现登录逻辑"><a href="#实现登录逻辑" class="headerlink" title="实现登录逻辑"></a>实现登录逻辑</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:firebase_auth/firebase_auth.dart&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:google_sign_in/google_sign_in.dart&#x27;</span>;</span><br><span class="line"></span><br><span class="line">Future&lt;UserCredential?&gt; signInWithGoogle() <span class="keyword">async</span> &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 触发Google登录流程</span></span><br><span class="line">    <span class="keyword">final</span> GoogleSignInAccount? googleUser = <span class="keyword">await</span> GoogleSignIn().signIn();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (googleUser == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 获取认证详情</span></span><br><span class="line">    <span class="keyword">final</span> GoogleSignInAuthentication googleAuth = <span class="keyword">await</span> googleUser.authentication;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 创建Firebase凭证</span></span><br><span class="line">    <span class="keyword">final</span> OAuthCredential credential = GoogleAuthProvider.credential(</span><br><span class="line">      accessToken: googleAuth.accessToken,</span><br><span class="line">      idToken: googleAuth.idToken,</span><br><span class="line">    );</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 使用Firebase登录</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">await</span> FirebaseAuth.instance.signInWithCredential(credential);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Google登录错误: <span class="subst">$e</span>&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="实现-Apple-登录"><a href="#实现-Apple-登录" class="headerlink" title="实现 Apple 登录"></a>实现 Apple 登录</h1><h2 id="iOS-配置-1"><a href="#iOS-配置-1" class="headerlink" title="iOS 配置"></a>iOS 配置</h2><ol>
+<li>在 Xcode 中启用 “Sign In with Apple” 能力</li>
+<li>在开发者账户中配置 Apple ID 登录</li>
+</ol>
+<h2 id="Android-配置（可选）"><a href="#Android-配置（可选）" class="headerlink" title="Android 配置（可选）"></a>Android 配置（可选）</h2><p>从 Android 12 开始支持 Apple 登录，需要配置 <code>sign_in_with_apple</code> 插件。</p>
+<h2 id="实现登录逻辑-1"><a href="#实现登录逻辑-1" class="headerlink" title="实现登录逻辑"></a>实现登录逻辑</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:firebase_auth/firebase_auth.dart&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:sign_in_with_apple/sign_in_with_apple.dart&#x27;</span>;</span><br><span class="line"></span><br><span class="line">Future&lt;UserCredential?&gt; signInWithApple() <span class="keyword">async</span> &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 触发Apple登录流程</span></span><br><span class="line">    <span class="keyword">final</span> credential = <span class="keyword">await</span> SignInWithApple.getAppleIDCredential(</span><br><span class="line">      scopes: [</span><br><span class="line">        AppleIDAuthorizationScopes.email,</span><br><span class="line">        AppleIDAuthorizationScopes.fullName,</span><br><span class="line">      ],</span><br><span class="line">    );</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 创建OAuth提供者</span></span><br><span class="line">    <span class="keyword">final</span> oauthProvider = OAuthProvider(<span class="string">&#x27;apple.com&#x27;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 创建Firebase凭证</span></span><br><span class="line">    <span class="keyword">final</span> firebaseCredential = oauthProvider.credential(</span><br><span class="line">      idToken: credential.identityToken,</span><br><span class="line">      accessToken: credential.authorizationCode,</span><br><span class="line">    );</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 使用Firebase登录</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">await</span> FirebaseAuth.instance.signInWithCredential(firebaseCredential);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Apple登录错误: <span class="subst">$e</span>&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="创建统一的登录界面"><a href="#创建统一的登录界面" class="headerlink" title="创建统一的登录界面"></a>创建统一的登录界面</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:flutter/material.dart&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LoginScreen</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      body: Center(</span><br><span class="line">        child: Column(</span><br><span class="line">          mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">          children: [</span><br><span class="line">            ElevatedButton(</span><br><span class="line">              onPressed: () <span class="keyword">async</span> &#123;</span><br><span class="line">                <span class="keyword">final</span> user = <span class="keyword">await</span> signInWithGoogle();</span><br><span class="line">                <span class="keyword">if</span> (user != <span class="keyword">null</span>) &#123;</span><br><span class="line">                  <span class="comment">// 登录成功，导航到主页</span></span><br><span class="line">                  Navigator.pushReplacementNamed(context, <span class="string">&#x27;/home&#x27;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;,</span><br><span class="line">              child: Text(<span class="string">&#x27;使用Google登录&#x27;</span>),</span><br><span class="line">            ),</span><br><span class="line">            SizedBox(height: <span class="number">20</span>),</span><br><span class="line">            SignInWithAppleButton(</span><br><span class="line">              onPressed: () <span class="keyword">async</span> &#123;</span><br><span class="line">                <span class="keyword">final</span> user = <span class="keyword">await</span> signInWithApple();</span><br><span class="line">                <span class="keyword">if</span> (user != <span class="keyword">null</span>) &#123;</span><br><span class="line">                  <span class="comment">// 登录成功，导航到主页</span></span><br><span class="line">                  Navigator.pushReplacementNamed(context, <span class="string">&#x27;/home&#x27;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;,</span><br><span class="line">            ),</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="处理用户状态"><a href="#处理用户状态" class="headerlink" title="处理用户状态"></a>处理用户状态</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在主widget中监听认证状态</span></span><br><span class="line">StreamBuilder&lt;User?&gt;(</span><br><span class="line">  stream: FirebaseAuth.instance.authStateChanges(),</span><br><span class="line">  builder: (context, snapshot) &#123;</span><br><span class="line">    <span class="keyword">if</span> (snapshot.hasData) &#123;</span><br><span class="line">      <span class="keyword">return</span> HomePage(); <span class="comment">// 用户已登录</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> LoginScreen(); <span class="comment">// 用户未登录</span></span><br><span class="line">  &#125;,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h1 id="用户注销"><a href="#用户注销" class="headerlink" title="用户注销"></a>用户注销</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;<span class="keyword">void</span>&gt; signOut() <span class="keyword">async</span> &#123;</span><br><span class="line">  <span class="keyword">await</span> FirebaseAuth.instance.signOut();</span><br><span class="line">  <span class="keyword">await</span> GoogleSignIn().signOut(); <span class="comment">// 仅Google登录需要</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意事项</p>
+<ol>
+<li>Apple 登录要求：如果应用支持 Apple 登录，且应用在 App Store 上架，所有其他社交登录选项都必须提供 Apple 登录选项</li>
+<li>测试环境：在开发阶段，确保在设备上测试，模拟器可能无法正常工作</li>
+<li>隐私政策：确保应用有隐私政策链接，特别是使用社交登录时</li>
+<li>用户数据：处理用户可能拒绝提供电子邮件或姓名的情况</li>
+</ol>
+<p>进阶功能</p>
+<ol>
+<li>链接多个认证提供者：使用 <code>linkWithCredential()</code> 方法</li>
+<li>错误处理：完善各种错误情况的处理</li>
+<li>分析集成：添加分析跟踪登录事件</li>
+<li>深度链接：处理登录后的重定向</li>
+</ol>
+<p>以上实现提供了完整的 Google 和 Apple 登录集成方案，可以根据您的具体需求进行调整。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
